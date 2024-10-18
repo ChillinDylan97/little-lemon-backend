@@ -18,10 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('restaurant.urls')),
-    path('restaurant/menu/',include('restaurant.urls')),
-    path('api/',include('LittleLemonAPI.urls')),
-    path('booking/', include(router.urls)),
-
+      path('admin/', admin.site.urls),
+    path('api/', include('restaurant.urls')),
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.authtoken')),
 ]
